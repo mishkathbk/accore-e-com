@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #2D2B3A;
+  --cream: #FDF9F3;
+  --paper: #FFFFFF;
+  --muted: #8C8799;
+  --line: #EFEAE2;
+  --brand: #FF8A7A;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink);
+  background-color: var(--cream);
+  font-feature-settings: 'ss01';
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  letter-spacing: -0.02em;
+}
+
+.font-accent {
+  font-family: 'Caveat', cursive;
+}
+
+/* Container helper */
+.container-x { @apply max-w-7xl mx-auto px-6; }
+
+/* Soft card utility */
+.card-soft {
+  background: var(--paper);
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(45, 43, 58, 0.04), 0 12px 32px rgba(45, 43, 58, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-soft-hover:hover {
+  box-shadow: 0 16px 40px rgba(45, 43, 58, 0.1);
+  transform: translateY(-4px);
+}
+
+.hairline { border: 1px solid var(--line); }
+
+/* Subtle pill badge */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  background: #FFE4DC;
+  color: #EB6D5E;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Soft section tints */
+.tint-blush { background: #FFF5F1; }
+.tint-peach { background: #FFF1E8; }
+.tint-mint  { background: #E4F2EC; }
+.tint-sky   { background: #EAF4FB; }
+.tint-butter { background: #FFF8E0; }
+.tint-lavender { background: #F1ECF8; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #E8DFD3;
+  border: 3px solid var(--cream);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: #D4C8B6; }
+
+::selection { background: #FFDAC9; color: #2D2B3A; }
+
+button { font-family: inherit; }
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #FF8A7A;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Gentle rule divider */
+.rule-soft { height: 1px; background: var(--line); }
+
+/* Text sizes: body reads at 16-17px with comfortable leading */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
